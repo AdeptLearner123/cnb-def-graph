@@ -10,8 +10,17 @@ from cnb_def_graph.consec.tokenizer import ConsecTokenizer
 from tqdm import tqdm
 
 class Disambiguator:
-    BATCH_SIZE = 4
+    #BATCH_SIZE = 4
     
+    BATCH_SIZES = [
+        (100, 32),
+        (400, 16),
+        (600, 8)
+        (700, 4),
+        (1000, 2),
+        (9999, 1)
+    ]
+
     def __init__(self, debug_mode=False, use_amp=False):
         self._dictionary = read_dicts()
         self._debug_mode = debug_mode
@@ -68,8 +77,23 @@ class Disambiguator:
         sorted_instances = [ instance for instance, _ in instance_inputs ]
         sorted_inputs = [ inputs for _, inputs in instance_inputs ]
 
-        batch_instances = [ sorted_instances[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
-        batch_inputs = [ sorted_inputs[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
+        batch_instances = []
+        batch_inputs = []
+
+        while len(sorted_instances) > 0:
+            longest_input = sorted_inputs[0]
+            input_len = len(longest_input[0])
+            batch_size = bisect.bisect_right(self.BATCH_SIZES, (input_len,))
+
+            batch_instances.append(sorted_instances[:batch_size])
+            batch_inputs.append(sorted_inputs[:batch_size])
+            
+            sorted_instances = sorted_instances[batch_size:]
+            sorted_inputs = sorted_inputs[batch_size:]
+
+        
+        #batch_instances = [ sorted_instances[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
+        #batch_inputs = [ sorted_inputs[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
 
         return list(zip(batch_instances, batch_inputs))
 

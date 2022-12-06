@@ -62,6 +62,7 @@ def divide_chunks(sense_ids):
 
 
 def disambiguate_defs(dictionary, sentence_ids, start_batch_id, should_save, use_amp=False):
+    print("Use amp", use_amp)
     token_tagger = TokenTagger()
     sense_proposer = SenseProposer()
     disambiguator = Disambiguator(use_amp=use_amp)
@@ -124,7 +125,7 @@ def disambiguate_all():
     disambiguate_defs(dictionary, missing_sentence_ids, len(disambiguated_sentence_ids), True)
 
 
-def dry_run():
+def dry_run(use_amp):
     with open(DRY_RUN_SENSES, "r") as file:
         sense_ids = file.read().splitlines()
     
@@ -133,7 +134,7 @@ def dry_run():
 
     print("Sentence ids", len(sentence_ids))
 
-    disambiguate_defs(dictionary, sentence_ids, 0, False)
+    disambiguate_defs(dictionary, sentence_ids, 0, False, use_amp)
 
 
 def create_dry_run():
@@ -157,7 +158,7 @@ def main():
             cProfile.run("disambiguate_all(use_amp)")
 
     if is_dry_run:
-        dry_run()
+        dry_run(use_amp)
     else:
         disambiguate_all()
 

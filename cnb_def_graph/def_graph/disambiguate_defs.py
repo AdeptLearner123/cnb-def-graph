@@ -148,7 +148,7 @@ def create_dry_run():
 def main():
     use_amp, is_dry_run, is_profile = parse_args()
 
-    print("Dry run", dry_run)
+    print("Dry run", is_dry_run)
 
     if is_profile:
         if dry_run:
@@ -163,4 +163,5 @@ def main():
 
 
 if __name__ == "__main__":
+    print("Main called")
     main()

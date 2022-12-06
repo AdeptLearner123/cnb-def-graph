@@ -15,7 +15,7 @@ class Disambiguator:
     BATCH_SIZES = [
         (100, 32),
         (400, 16),
-        (600, 8)
+        (600, 8),
         (700, 4),
         (1000, 2),
         (9999, 1)
@@ -87,7 +87,7 @@ class Disambiguator:
 
             batch_instances.append(sorted_instances[:batch_size])
             batch_inputs.append(sorted_inputs[:batch_size])
-            
+
             sorted_instances = sorted_instances[batch_size:]
             sorted_inputs = sorted_inputs[batch_size:]
 

@@ -138,6 +138,7 @@ def disambiguate_all(use_amp):
     sentence_ids = get_sentence_ids(dictionary, list(dictionary.keys()))
     disambiguated_sentence_ids = get_disambiguated_sentence_ids()
     missing_sentence_ids = set(sentence_ids).difference(disambiguated_sentence_ids)
+    missing_sentence_ids = list(missing_sentence_ids)
 
     print("Sentence ids:", len(missing_sentence_ids), "/", len(dictionary))
 

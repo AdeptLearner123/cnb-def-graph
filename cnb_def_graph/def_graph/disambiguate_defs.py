@@ -90,11 +90,17 @@ def disambiguate_defs(dictionary, sentence_ids, start_batch_id, should_save, use
         print("CHUNK", i)
         sense_idxs = [ parse_sentence_id(sentence_id) for sentence_id in chunk_sentence_ids ]
         sentence_list = [ dictionary[sense_id]["sentences"][int(idx)] for sense_id, idx in sense_idxs ]
-        token_tags_list, token_indices = [ token_tagger.tokenize_tag(definition) for definition in sentence_list ]
+        token_tagger_results = [ token_tagger.tokenize_tag(definition) for definition in sentence_list ]
+        token_tags_list = [ token_tags for token_tags, _ in token_tagger_results ]
+        token_indices_list = [ token_indices for _, token_indices in token_tagger_results ]
         proposals_list = [ sense_proposer.propose_senses(token_tags) for token_tags in token_tags_list ]
 
         senses_list = disambiguator.batch_disambiguate(proposals_list)
-        batch_result = { sentence_id: create_entry(sentence, senses, token_indices) for sentence_id, sentence, senses in zip(chunk_sentence_ids, sentence_list, senses_list) }
+        batch_result = {
+            sentence_id: create_entry(sentence, senses, token_indices) 
+            for sentence_id, sentence, senses, token_indices
+            in zip(chunk_sentence_ids, sentence_list, senses_list, token_indices_list)
+        }
 
         if should_save:
             save(batch_id, batch_result)

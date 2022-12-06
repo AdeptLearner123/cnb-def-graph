@@ -18,7 +18,7 @@ setup                           = "tasks:setup"
 disambiguate                    = "tools.disambiguate:main"
 
 create-sense-inventory          = "cnb_def_graph.sense_inventory.create_sense_inventory:main"
-disambiguate-defs               = "cnb_def_graph.def_graph.disambiguate_defs:disambiguate_all"
+disambiguate-defs               = "cnb_def_graph.def_graph.disambiguate_defs:main"
 create-dry-run                  = "cnb_def_graph.def_graph.disambiguate_defs:create_dry_run"
 
 [tool.poetry.group.dev.dependencies]

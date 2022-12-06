@@ -15,8 +15,9 @@ CHUNK_SIZE = 10000
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument("--use-amp", action="store_true")
+    parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
-    return args.use_amp
+    return args.use_amp, args.dry_run
 
 
 def get_sentence_id(sense, idx):
@@ -58,9 +59,7 @@ def divide_chunks(sense_ids):
     return [ sense_ids[i : i + CHUNK_SIZE] for i in range(0, len(sense_ids), CHUNK_SIZE) ]
 
 
-def disambiguate_defs(dictionary, sentence_ids, start_batch_id, should_save):
-    use_amp = parse_args()
-    
+def disambiguate_defs(dictionary, sentence_ids, start_batch_id, should_save, use_amp):
     token_tagger = TokenTagger()
     sense_proposer = SenseProposer()
     disambiguator = Disambiguator(use_amp=use_amp)
@@ -135,12 +134,6 @@ def dry_run():
     disambiguate_defs(dictionary, sentence_ids, 0, False)
 
 
-def dry_run_profiled():
-    import cProfile
-
-    cProfile.run("dry_run", "profile")
-
-
 def create_dry_run():
     import random
 
@@ -148,3 +141,12 @@ def create_dry_run():
     dry_run_senses = random.sample(dictionary.keys(), 512)
     with open(DRY_RUN_SENSES, "w+") as file:
         file.write("\n".join(dry_run_senses))
+
+
+def main():
+    use_amp, dry_run = parse_args()
+
+    if dry_run:
+        dry_run(use_amp)
+    else:
+        disambiguate_all(use_amp)

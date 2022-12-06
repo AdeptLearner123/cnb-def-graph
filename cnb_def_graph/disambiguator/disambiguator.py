@@ -13,12 +13,13 @@ class Disambiguator:
     #BATCH_SIZE = 4
     
     BATCH_SIZES = [
-        (100, 32),
-        (400, 16),
-        (600, 8),
-        (700, 4),
-        (1000, 2),
-        (9999, 1)
+        (9999, 8)
+        #(100, 32),
+        #(400, 16),
+        #(600, 8),
+        #(700, 4),
+        #(1000, 2),
+        #(9999, 1)
     ]
 
     def __init__(self, debug_mode=False, use_amp=False):
@@ -83,7 +84,8 @@ class Disambiguator:
         while len(sorted_instances) > 0:
             longest_input = sorted_inputs[0]
             input_len = len(longest_input[0])
-            batch_size = bisect.bisect_right(self.BATCH_SIZES, (input_len,))
+            batch_size_idx = bisect.bisect_right(self.BATCH_SIZES, (input_len,))
+            _, batch_size = self.BATCH_SIZES[batch_size_idx]
 
             batch_instances.append(sorted_instances[:batch_size])
             batch_inputs.append(sorted_inputs[:batch_size])

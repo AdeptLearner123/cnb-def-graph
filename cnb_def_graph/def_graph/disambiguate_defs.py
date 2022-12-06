@@ -3,6 +3,7 @@ from cnb_def_graph.sense_proposer.sense_proposer import SenseProposer
 from cnb_def_graph.disambiguator.disambiguator import Disambiguator
 from cnb_def_graph.utils.read_dicts import read_dicts
 
+import cProfile
 from time import time
 import os
 import json
@@ -16,8 +17,9 @@ def parse_args():
     parser = ArgumentParser()
     parser.add_argument("--use-amp", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--profile", action="store_true")
     args = parser.parse_args()
-    return args.use_amp, args.dry_run
+    return args.use_amp, args.dry_run, args.profile
 
 
 def get_sentence_id(sense, idx):
@@ -144,7 +146,13 @@ def create_dry_run():
 
 
 def main():
-    use_amp, dry_run = parse_args()
+    use_amp, dry_run, profile = parse_args()
+
+    if profile:
+        if dry_run:
+            cProfile.run("dry_run(use_amp)")
+        else:
+            cProfile.run("disambiguate_all(use_amp)")
 
     if dry_run:
         dry_run(use_amp)

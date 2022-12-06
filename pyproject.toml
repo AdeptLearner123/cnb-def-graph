@@ -16,6 +16,7 @@ format                          = "tasks:format"
 setup                           = "tasks:setup"
 
 disambiguate                    = "tools.disambiguate:main"
+sentence-count                  = "tools.sentence_count:main"
 
 create-sense-inventory          = "cnb_def_graph.sense_inventory.create_sense_inventory:main"
 disambiguate-defs               = "cnb_def_graph.def_graph.disambiguate_defs:main"

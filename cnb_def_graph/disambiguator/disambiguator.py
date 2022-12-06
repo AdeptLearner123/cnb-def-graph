@@ -61,11 +61,17 @@ class Disambiguator:
         return self._disambiguate_tokens(sense_id, token_senses, compound_indices)
 
     
-    def _divide_batches(self, active_instances, input_senses_list):
-        instance_input_senses = list(zip(active_instances, input_senses_list))
-        instance_input_senses.sort(key=lambda item: len(item[0]))
-        batches = [ instance_input_senses[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
-        return batches
+    def _divide_batches(self, active_instances, inputs_list):
+        instance_inputs = list(zip(active_instances, inputs_list))
+        instance_inputs.sort(key=lambda item: len(item[1][0]))
+
+        sorted_instances = [ instance for instance, _ in instance_inputs ]
+        sorted_inputs = [ inputs for _, inputs in instance_inputs ]
+
+        batch_instances = [ sorted_instances[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
+        batch_inputs = [ sorted_inputs[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
+
+        return list(zip(batch_instances, batch_inputs))
 
 
     def batch_disambiguate(self, token_proposals_list):
@@ -77,20 +83,18 @@ class Disambiguator:
         while any([ not instance.is_finished() for instance in disambiguation_instances ]):
             active_instances = [ instance for instance in disambiguation_instances if not instance.is_finished() ]
 
-            inputs_senses_list = [ instance.get_next_input() for instance in active_instances ]
+            inputs_list = [ instance.get_next_input() for instance in active_instances ]
 
-            for batch_instances, batch_inputs_senses in tqdm(self._divide_batches(active_instances, inputs_senses_list)):
-                inputs_list = [ inputs for inputs, _ in batch_inputs_senses ]
-
+            for batch_instances, batch_inputs in tqdm(self._divide_batches(active_instances, inputs_list)):
                 #for inputs, instance in zip(inputs_list, batch_instances):
                 #    if len(inputs[0]) == 712:
                 #        print("Found", instance._tokens, instance._get_context_definitions(), instance._get_candidate_definitions())
 
                 if torch.cuda.is_available():
-                    inputs_list = [ self._send_inputs_to_cuda(inputs) for inputs in inputs_list ]
+                    batch_inputs = [ self._send_inputs_to_cuda(inputs) for inputs in batch_inputs ]
                 
-                inputs_list = list(zip(*inputs_list))
-                probs_list = self._sense_extractor.batch_extract(*inputs_list)
+                batch_inputs = list(zip(*batch_inputs))
+                probs_list = self._sense_extractor.batch_extract(*batch_inputs)
 
                 idx_list = [ torch.argmax(torch.tensor(probs)) for probs in probs_list ]
 

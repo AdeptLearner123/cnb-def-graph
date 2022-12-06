@@ -40,7 +40,7 @@ class ConsecDisambiguationInstance:
         candidate_senses, candidate_definitions = self._get_candidate_definitions()
         
         tokenizer_result = self._tokenizer.tokenize(self._tokens, idx, candidate_definitions, context_definitions)
-        return tokenizer_result, candidate_senses
+        return tokenizer_result
 
     def _get_candidate_definitions(self):
         idx = self._disambiguation_order[0]

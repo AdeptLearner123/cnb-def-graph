@@ -9,7 +9,7 @@ import json
 from config import DISAMBIGUATION_BATCHES, DRY_RUN_SENSES
 from argparse import ArgumentParser
 
-CHUNK_SIZE = 50 #600
+CHUNK_SIZE = 600
 
 def parse_args():
     parser = ArgumentParser()
@@ -65,7 +65,6 @@ def create_entry(sentence, senses, token_indices):
     senses = [ sense for sense in senses if sense is not None ]
     senses = set(senses)
     senses = sorted(list(senses), key = lambda item: item[1])
-    print(senses)
     sense_char_indices = []
 
     for sense, start, end in senses:

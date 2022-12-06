@@ -9,7 +9,7 @@ from cnb_def_graph.consec.tokenizer import ConsecTokenizer
 from tqdm import tqdm
 
 class Disambiguator:
-    BATCH_SIZE = 4
+    BATCH_SIZE = 8
 
     def __init__(self, debug_mode=False, use_amp=False):
         self._dictionary = read_dicts()

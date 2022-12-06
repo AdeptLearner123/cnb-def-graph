@@ -10,7 +10,7 @@ def lists_to_tuples(list):
 
 
 def test_disambiguator():
-    disambiguator = Disambiguator()
+    disambiguator = Disambiguator(use_amp=True)
 
     for filename in os.listdir(TEST_LABELS):
         with open(os.path.join(TEST_LABELS, filename), "r") as file:

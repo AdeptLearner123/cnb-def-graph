@@ -14,7 +14,8 @@ class Disambiguator:
     
     # Empirically determined max batch sizes for Nvidia A100 for batch input length
     BATCH_SIZES = [
-        (200, 64),
+        (100, 64),
+        (200, 32),
         (400, 16),
         (500, 8),
         (9999, 4)

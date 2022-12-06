@@ -63,7 +63,7 @@ class Disambiguator:
     
     def _divide_batches(self, active_instances, inputs_list):
         instance_inputs = list(zip(active_instances, inputs_list))
-        instance_inputs.sort(key=lambda item: len(item[1][0]))
+        instance_inputs.sort(key=lambda item: len(item[1][0]), reverse=True)
 
         sorted_instances = [ instance for instance, _ in instance_inputs ]
         sorted_inputs = [ inputs for _, inputs in instance_inputs ]

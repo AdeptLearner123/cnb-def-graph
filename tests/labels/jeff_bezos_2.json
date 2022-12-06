@@ -1,0 +1,265 @@
+{
+    "sense_id": "Jeff_Bezos",
+    "sentence": 2,
+    "tokens": [
+        {
+            "token": "With",
+            "tag": null
+        },
+        {
+            "token": "a",
+            "tag": null
+        },
+        {
+            "token": "net",
+            "tag": "adjective",
+            "proposals": [
+                ["m_en_gbus0435140.006", 2, 3],
+                ["m_en_gbus0435140.009", 2, 3],
+                ["m_en_gbus0435140.010", 2, 3],
+                ["m_en_gbus0435140.011", 2, 3],
+                ["m_en_gbus0435140.013", 2, 3],
+                ["m_en_gbus0435140.014", 2, 3],
+                ["m_en_gbus0435140.018", 2, 3],
+                ["m_en_gbus0435140.020", 2, 3],
+                ["m_en_gbus0685980.007", 2, 3],
+                ["m_en_gbus0685980.010", 2, 3],
+                ["m_en_gbus0685980.011", 2, 3],
+                ["m_en_gbus0685980.013", 2, 3],
+                ["m_en_gbus1199302.002", 2, 4]
+            ],
+            "sense": [
+                ["m_en_gbus1199302.002", 2, 4]
+            ]
+        },
+        {
+            "token": "worth",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus1169060.027", 3, 4],
+                ["m_en_gbus1169060.029", 3, 4],
+                ["m_en_gbus1169060.030", 3, 4],
+                ["m_en_gbus1169060.031", 3, 4],
+                ["m_en_gbus1199302.002", 2, 4]
+            ],
+            "sense": [
+                ["m_en_gbus1199302.002", 2, 4]
+            ]
+        },
+        {
+            "token": "of",
+            "tag": null
+        },
+        {
+            "token": "around",
+            "tag": null
+        },
+        {
+            "token": "US$",
+            "tag": null
+        },
+        {
+            "token": "136",
+            "tag": "numeral"
+        },
+        {
+            "token": "billion",
+            "tag": "numeral",
+            "proposals": [
+                ["m_en_gbus0094340.006", 8, 9],
+                ["m_en_gbus0094340.010", 8, 9],
+                ["m_en_gbus0094340.012", 8, 9],
+                ["m_en_gbus0094340.013", 8, 9]
+            ],
+            "sense": [
+                ["m_en_gbus0094340.012", 8, 9]
+            ]
+        },
+        {
+            "token": "as",
+            "tag": null
+        },
+        {
+            "token": "of",
+            "tag": null
+        },
+        {
+            "token": "September",
+            "tag": "proper",
+            "proposals": [
+                ["m_en_gbus0925560.006", 11, 12],
+                ["September", 11, 12],
+                ["September_(Earth,_Wind_&_Fire_song)", 11, 12]
+            ],
+            "sense": [
+                ["m_en_gbus0925560.006", 11, 12]
+            ]
+        },
+        {
+            "token": "2022",
+            "tag": "numeral"
+        },
+        {
+            "token": ",",
+            "tag": null
+        },
+        {
+            "token": "Bezos",
+            "tag": "proper"
+        },
+        {
+            "token": "is",
+            "tag": null
+        },
+        {
+            "token": "the",
+            "tag": null
+        },
+        {
+            "token": "second",
+            "tag": null
+        },
+        {
+            "token": "-",
+            "tag": null
+        },
+        {
+            "token": "wealthiest",
+            "tag": "adjective",
+            "proposals": [
+                ["m_en_gbus1146160.007", 19, 20]
+            ],
+            "sense": [
+                ["m_en_gbus1146160.007", 19, 20]
+            ]
+        },
+        {
+            "token": "person",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0768650.009", 20, 21],
+                ["m_en_gbus0768650.013", 20, 21],
+                ["m_en_gbus0768650.018", 20, 21],
+                ["m_en_gbus0768650.021", 20, 21],
+                ["m_en_gbus0768650.022", 20, 21],
+                ["m_en_gbus0768650.025", 20, 21],
+                ["m_en_gbus0768650.031", 20, 21]
+            ],
+            "sense": [
+                ["m_en_gbus0768650.009", 20, 21]
+            ]
+        },
+        {
+            "token": "in",
+            "tag": null
+        },
+        {
+            "token": "the",
+            "tag": null,
+            "sense": [
+                ["m_en_gbus1168160.010", 22, 24]
+            ]
+        },
+        {
+            "token": "world",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus1168160.008", 22, 24],
+                ["m_en_gbus1168160.010", 22, 24],
+                ["m_en_gbus1168160.011", 22, 24],
+                ["m_en_gbus1168160.013", 22, 24],
+                ["m_en_gbus1168160.014", 22, 24],
+                ["m_en_gbus1168160.016", 22, 24],
+                ["m_en_gbus1168160.019", 22, 24],
+                ["m_en_gbus1168160.020", 22, 24],
+                ["m_en_gbus1168160.021", 22, 24],
+                ["m_en_gbus1168160.022", 22, 24],
+                ["m_en_gbus1168160.024", 22, 24],
+                ["m_en_gbus1168160.025", 22, 24],
+                ["m_en_gbus1168160.026", 22, 24]
+            ],
+            "sense": [
+                ["m_en_gbus1168160.010", 22, 24]
+            ]
+        },
+        {
+            "token": "and",
+            "tag": null
+        },
+        {
+            "token": "was",
+            "tag": null
+        },
+        {
+            "token": "the",
+            "tag": null
+        },
+        {
+            "token": "wealthiest",
+            "tag": "adjective",
+            "proposals": [
+                ["m_en_gbus1146160.007", 27, 28]
+            ],
+            "sense": [
+                ["m_en_gbus1146160.007", 27, 28]
+            ]
+        },
+        {
+            "token": "from",
+            "tag": null
+        },
+        {
+            "token": "2017",
+            "tag": "numeral"
+        },
+        {
+            "token": "to",
+            "tag": null
+        },
+        {
+            "token": "2021",
+            "tag": "numeral"
+        },
+        {
+            "token": "according",
+            "tag": "verb",
+            "proposals": [
+                ["m_en_gbus0005090.006", 32, 33],
+                ["m_en_gbus0005090.013", 32, 33]
+            ],
+            "sense": [
+                ["m_en_gbus0005090.013", 32, 33]
+            ]
+        },
+        {
+            "token": "to",
+            "tag": null
+        },
+        {
+            "token": "both",
+            "tag": null
+        },
+        {
+            "token": "Bloomberg's Billionaires Index",
+            "tag": "proper"
+        },
+        {
+            "token": "and",
+            "tag": null
+        },
+        {
+            "token": "Forbes",
+            "tag": "proper",
+            "proposals": [
+                ["Forbes", 37, 38]
+            ],
+            "sense": [
+                ["Forbes", 37, 38]
+            ]
+        },
+        {
+            "token": ".",
+            "tag": null
+        }
+    ]
+}

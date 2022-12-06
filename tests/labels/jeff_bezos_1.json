@@ -1,0 +1,121 @@
+{
+    "sense_id": "Jeff_Bezos",
+    "sentence": 1,
+    "tokens": [
+        {
+            "token": "He",
+            "tag": null
+        },
+        {
+            "token": "is",
+            "tag": null
+        },
+        {
+            "token": "the",
+            "tag": null
+        },
+        {
+            "token": "founder",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0383990.005", 3, 4],
+                ["m_en_gbus0384000.005", 3, 4],
+                ["m_en_gbus0384010.026", 3, 4]
+            ],
+            "sense": [
+                ["m_en_gbus0384000.005", 3, 4]
+            ]
+        },
+        {
+            "token": ",",
+            "tag": null
+        },
+        {
+            "token": "executive",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0340420.011", 5, 6],
+                ["m_en_gbus0340420.015", 5, 6],
+                ["m_en_gbus0340420.017", 5, 6],
+                ["m_en_gbus0340420.019", 5, 6]
+            ],
+            "sense": [
+                ["m_en_gbus0340420.011", 5, 6]
+            ]
+        },
+        {
+            "token": "chairman",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0167070.006", 6, 7],
+                ["m_en_gbus0167070.009", 6, 7],
+                ["m_en_gbus0167070.010", 6, 7],
+                ["m_en_gbus0167070.015", 6, 7],
+                ["m_en_gbus0167070.017", 6, 7]
+            ],
+            "sense": [
+                ["m_en_gbus0167070.009", 6, 7]
+            ]
+        },
+        {
+            "token": "and",
+            "tag": null
+        },
+        {
+            "token": "former",
+            "tag": null
+        },
+        {
+            "token": "president",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0812640.008", 9, 10],
+                ["m_en_gbus0812640.011", 9, 10],
+                ["m_en_gbus0812640.013", 9, 10],
+                ["m_en_gbus0812640.014", 9, 10],
+                ["m_en_gbus0812640.016", 9, 10]
+            ],
+            "sense": [
+                ["m_en_gbus0812640.014", 9, 10]
+            ]
+        },
+        {
+            "token": "and",
+            "tag": null
+        },
+        {
+            "token": "CEO",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0164550.005", 11, 12]
+            ],
+            "sense": [
+                ["m_en_gbus0164550.005", 11, 12]
+            ]
+        },
+        {
+            "token": "of",
+            "tag": null
+        },
+        {
+            "token": "Amazon",
+            "tag": "proper",
+            "proposals": [
+                ["m_en_gbus0027220.007", 13, 14],
+                ["m_en_gbus0027230.008", 13, 14],
+                ["m_en_gbus0027230.011", 13, 14],
+                ["m_en_gbus0027230.015", 13, 14],
+                ["Amazon", 13, 14],
+                ["Amazon_(company)", 13, 14]
+            ],
+            "sense":[
+                ["Amazon_(company)", 13, 14]
+            ]
+        },
+        {
+            "token": ".",
+            "tag": null
+        }
+    ],
+    "compound_indices": []
+}

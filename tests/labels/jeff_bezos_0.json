@@ -1,0 +1,146 @@
+{
+    "sense_id": "Jeff_Bezos",
+    "sentence": 0,
+    "tokens": [
+        {
+            "token": "an",
+            "tag": null
+        },
+        {
+            "token": "American",
+            "tag": "adjective",
+            "proposals": [
+                ["m_en_gbus0028030.003", 1, 2],
+                ["m_en_gbus0028030.005", 1, 2]
+            ],
+            "sense": [
+                ["m_en_gbus0028030.003", 1, 2]
+            ]
+        },
+        {
+            "token": "entrepreneur",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0327210.005", 2, 3],
+                ["m_en_gbus0327210.010", 2, 3]
+            ],
+            "sense": [
+                ["m_en_gbus0327210.005", 2, 3]
+            ]
+        },
+        {
+            "token": ",",
+            "tag": null
+        },
+        {
+            "token": "media",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0628620.006", 4, 5],
+                ["m_en_gbus0628630.006", 4, 5],
+                ["m_en_gbus0629590.011", 4, 5],
+                ["m_en_gbus0629590.015", 4, 5],
+                ["m_en_gbus0629590.017", 4, 5],
+                ["m_en_gbus0629590.018", 4, 5],
+                ["m_en_gbus0629590.019", 4, 5],
+                ["m_en_gbus0629590.021", 4, 5],
+                ["m_en_gbus0629590.023", 4, 5],
+                ["m_en_gbus0629590.025", 4, 5],
+                ["m_en_gbus0629590.029", 4, 5]
+            ],
+            "sense": [
+                ["m_en_gbus0628620.006", 4, 5]
+            ]
+        },
+        {
+            "token": "proprietor",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0821900.005", 5, 6]
+            ],
+            "sense": [
+                ["m_en_gbus0821900.005", 5, 6]
+            ]
+        },
+        {
+            "token": ",",
+            "tag": null
+        },
+        {
+            "token": "investor",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0519990.004", 7, 8]
+            ],
+            "sense": [
+                ["m_en_gbus0519990.004", 7, 8]
+            ]
+        },
+        {
+            "token": ",",
+            "tag": null
+        },
+        {
+            "token": "computer",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0207340.005", 9, 10],
+                ["m_en_gbus0207340.008", 9, 10]
+            ],
+            "sense": [
+                ["m_en_gbus0207340.005", 9, 10]
+            ]
+        },
+        {
+            "token": "engineer",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0324670.016", 10, 11],
+                ["m_en_gbus0324670.019", 10, 11],
+                ["m_en_gbus0324670.020", 10, 11],
+                ["m_en_gbus0324670.021", 10, 11]
+            ],
+            "sense": [
+                ["m_en_gbus0324670.019", 10, 11],
+                ["m_en_gbus0324670.016", 10, 11]
+            ]
+        },
+        {
+            "token": ",",
+            "tag": null
+        },
+        {
+            "token": "and",
+            "tag": null
+        },
+        {
+            "token": "commercial",
+            "tag": "adjective",
+            "proposals": [
+                ["m_en_gbus0203290.007", 13, 14],
+                ["m_en_gbus0203290.010", 13, 14],
+                ["m_en_gbus0203290.011", 13, 14],
+                ["m_en_gbus0203290.013", 13, 14],
+                ["m_en_gbus0203290.015", 13, 14]
+            ],
+            "sense": [
+                ["m_en_gbus0203290.007", 13, 14],
+                ["m_en_gbus0203290.010", 13, 14]
+            ]
+        },
+        {
+            "token": "astronaut",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0054040.005", 14, 15]
+            ],
+            "sense": [
+                ["m_en_gbus0054040.005", 14, 15]
+            ]
+        },
+        {
+            "token": ".",
+            "tag": null
+        }
+    ]
+}

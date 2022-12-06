@@ -1,0 +1,97 @@
+{
+    "sense_id": "m_en_gbus0644520.007",
+    "sentence": 0,
+    "tokens": [
+        {
+            "token": "a",
+            "tag": null
+        },
+        {
+            "token": "person",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0768650.009", 1, 2],
+                ["m_en_gbus0768650.013", 1, 2],
+                ["m_en_gbus0768650.018", 1, 2],
+                ["m_en_gbus0768650.021", 1, 2],
+                ["m_en_gbus0768650.022", 1, 2],
+                ["m_en_gbus0768650.025", 1, 2],
+                ["m_en_gbus0768650.031", 1, 2]
+            ],
+            "sense": [
+                ["m_en_gbus0768650.009", 1, 2]
+            ]
+        },
+        {
+            "token": "whose",
+            "tag": null
+        },
+        {
+            "token": "assets",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0052610.005", 3, 4],
+                ["m_en_gbus0052610.009", 3, 4],
+                ["m_en_gbus0052610.010", 3, 4]
+            ],
+            "sense": [
+                ["m_en_gbus0052610.009", 3, 4]
+            ]
+        },
+        {
+            "token": "are",
+            "tag": null
+        },
+        {
+            "token": "worth",
+            "tag": "adjective",
+            "proposals": [
+                ["m_en_gbus1169060.013", 5, 6],
+                ["m_en_gbus1169060.015", 5, 6],
+                ["m_en_gbus1169060.016", 5, 6],
+                ["m_en_gbus1169060.017", 5, 6]
+            ],
+            "sense": [
+                ["m_en_gbus1169060.017", 5, 6]
+            ]
+        },
+        {
+            "token": "one",
+            "tag": null
+        },
+        {
+            "token": "million",
+            "tag": "numeral",
+            "proposals": [
+                ["m_en_gbus0644510.006", 7, 8],
+                ["m_en_gbus0644510.008", 7, 8],
+                ["m_en_gbus0644510.010", 7, 8],
+                ["m_en_gbus0644510.011", 7, 8],
+                ["m_en_gbus0644510.014", 7, 8],
+                ["m_en_gbus0644510.015", 7, 8]
+            ],
+            "sense": [
+                ["m_en_gbus0644510.006", 7, 8],
+                ["m_en_gbus0644510.014", 7, 8]
+            ]
+        },
+        {
+            "token": "dollars",
+            "tag": "noun",
+            "proposals": [
+                ["m_en_gbus0289060.005", 8, 9]
+            ],
+            "sense": [
+                ["m_en_gbus0289060.005", 8 ,9]
+            ]
+        },
+        {
+            "token": "or",
+            "tag": null
+        },
+        {
+            "token": "more",
+            "tag": null
+        }
+    ]
+}

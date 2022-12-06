@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "cnb-def-graph"
+version = "0.1.0"
+description = ""
+authors = ["Nalu Zou"]
+readme = "README.md"
+packages = [{include = "cnb_def_graph"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+spacy = "^3.4.3"
+transformers = "^4.24.0"
+
+[tool.poetry.scripts]
+format                          = "tasks:format"
+setup                           = "tasks:setup"
+
+disambiguate                    = "tools.disambiguate:main"
+
+create-sense-inventory          = "cnb_def_graph.sense_inventory.create_sense_inventory:main"
+disambiguate-defs               = "cnb_def_graph.def_graph.disambiguate_defs:disambiguate_all"
+dry-run                         = "cnb_def_graph.def_graph.disambiguate_defs:dry_run"
+create-dry-run                  = "cnb_def_graph.def_graph.disambiguate_defs:create_dry_run"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

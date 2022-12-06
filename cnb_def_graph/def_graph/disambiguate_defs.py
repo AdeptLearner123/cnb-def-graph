@@ -49,6 +49,9 @@ def save(batch_id, batch_text_senses):
     filename = f"batch_{batch_id}.json"
     path = os.path.join(DISAMBIGUATION_BATCHES, filename)
 
+    if not os.path.exists(DISAMBIGUATION_BATCHES):
+        os.mkdir(DISAMBIGUATION_BATCHES)
+    
     if os.path.isfile(path):
         raise "Batch file path already exists: " + path
 

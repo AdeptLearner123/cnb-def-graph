@@ -13,7 +13,8 @@ class Disambiguator:
     #BATCH_SIZE = 4
     
     BATCH_SIZES = [
-        (700, 32),
+        (200, 32),
+        (700, 16),
         (9999, 4)
     ]
 

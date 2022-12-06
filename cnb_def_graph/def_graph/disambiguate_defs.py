@@ -11,15 +11,14 @@ from config import DISAMBIGUATION_BATCHES, DRY_RUN_SENSES
 from argparse import ArgumentParser
 
 SAVE_INTERVAL = 2
-CHUNK_SIZE = 10000
+CHUNK_SIZE = 300
 
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument("--use-amp", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--profile", action="store_true")
     args = parser.parse_args()
-    return args.use_amp, args.dry_run, args.profile
+    return args.use_amp, args.dry_run
 
 
 def get_sentence_id(sense, idx):
@@ -114,7 +113,7 @@ def get_sentence_ids(dictionary, sense_ids):
     return sentence_ids
 
 
-def disambiguate_all():
+def disambiguate_all(use_amp):
     dictionary = read_dicts()
     sentence_ids = get_sentence_ids(dictionary, list(dictionary.keys()))
     disambiguated_sentence_ids = get_disambiguated_sentence_ids()
@@ -122,7 +121,7 @@ def disambiguate_all():
 
     print("Sentence ids:", len(missing_sentence_ids), "/", len(dictionary))
 
-    disambiguate_defs(dictionary, missing_sentence_ids, len(disambiguated_sentence_ids), True)
+    disambiguate_defs(dictionary, missing_sentence_ids, len(disambiguated_sentence_ids), True, use_amp)
 
 
 def dry_run(use_amp):
@@ -134,7 +133,7 @@ def dry_run(use_amp):
 
     print("Sentence ids", len(sentence_ids))
 
-    disambiguate_defs(dictionary, sentence_ids, 0, False, use_amp)
+    disambiguate_defs(dictionary, sentence_ids, 0, True, use_amp)
 
 
 def create_dry_run():
@@ -147,20 +146,12 @@ def create_dry_run():
 
 
 def main():
-    use_amp, is_dry_run, is_profile = parse_args()
-
-    print("Dry run", is_dry_run)
-
-    if is_profile:
-        if dry_run:
-            cProfile.run("dry_run(use_amp)")
-        else:
-            cProfile.run("disambiguate_all(use_amp)")
+    use_amp, is_dry_run = parse_args()
 
     if is_dry_run:
         dry_run(use_amp)
     else:
-        disambiguate_all()
+        disambiguate_all(use_amp)
 
 
 if __name__ == "__main__":

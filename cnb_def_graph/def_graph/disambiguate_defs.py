@@ -135,6 +135,12 @@ def dry_run():
     disambiguate_defs(dictionary, sentence_ids, 0, False)
 
 
+def dry_run_profiled():
+    import cProfile
+
+    cProfile.run("dry_run", "profile")
+
+
 def create_dry_run():
     import random
 

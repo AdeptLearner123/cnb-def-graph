@@ -13,8 +13,8 @@ class Disambiguator:
     #BATCH_SIZE = 4
     
     BATCH_SIZES = [
-        (700, 4),
-        (9999, 32)
+        (700, 32),
+        (9999, 4)
     ]
 
     def __init__(self, debug_mode=False, use_amp=False):

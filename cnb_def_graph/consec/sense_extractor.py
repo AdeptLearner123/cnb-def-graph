@@ -90,8 +90,7 @@ class SenseExtractor(nn.Module):
         return definition_probs
     
     def batch_extract(self, input_ids_list, attention_mask_list, token_types_list, relative_pos_list, definitions_mask_list, definition_positions_list):
-        print("Batch min length", min(len(input_ids) for input_ids in input_ids_list))
-        print("Batch max length", max(len(input_ids) for input_ids in input_ids_list))
+        print("Batch size", len(input_ids_list), "min:", min(len(input_ids) for input_ids in input_ids_list), "max:",  max(len(input_ids) for input_ids in input_ids_list))
         
         batch_input_ids = batchify(input_ids_list, 0)
         batch_attention_mask = batchify(attention_mask_list, 0)

@@ -61,7 +61,7 @@ def divide_chunks(sense_ids):
     return [ sense_ids[i : i + CHUNK_SIZE] for i in range(0, len(sense_ids), CHUNK_SIZE) ]
 
 
-def disambiguate_defs(dictionary, sentence_ids, start_batch_id, should_save, use_amp):
+def disambiguate_defs(dictionary, sentence_ids, start_batch_id, should_save, use_amp=False):
     token_tagger = TokenTagger()
     sense_proposer = SenseProposer()
     disambiguator = Disambiguator(use_amp=use_amp)
@@ -155,6 +155,6 @@ def main():
             cProfile.run("disambiguate_all(use_amp)")
 
     if dry_run:
-        dry_run(use_amp)
+        dry_run()
     else:
-        disambiguate_all(use_amp)
+        disambiguate_all()

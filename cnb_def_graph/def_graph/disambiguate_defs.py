@@ -64,6 +64,8 @@ def divide_chunks(sense_ids):
 
 
 def create_entry(sentence, senses, token_indices):
+    senses = [ sense for sense in senses if sense is not None ]
+    senses = set(senses)
     sense_char_indices = []
 
     for sense, start, end in senses:

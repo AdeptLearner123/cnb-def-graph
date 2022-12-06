@@ -78,6 +78,10 @@ class Disambiguator:
             for batch_instances, batch_inputs_senses in tqdm(self._divide_batches(active_instances, inputs_senses_list)):
                 inputs_list = [ inputs for inputs, _ in batch_inputs_senses ]
 
+                for inputs, instance in zip(inputs_list, batch_instances):
+                    if len(inputs[0]) == 712:
+                        print("Found", instance._tokens, instance._get_context_definitions(), instance._get_candidate_definitions())
+
                 if torch.cuda.is_available():
                     inputs_list = [ self._send_inputs_to_cuda(inputs) for inputs in inputs_list ]
                 

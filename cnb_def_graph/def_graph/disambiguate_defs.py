@@ -3,7 +3,6 @@ from cnb_def_graph.sense_proposer.sense_proposer import SenseProposer
 from cnb_def_graph.disambiguator.disambiguator import Disambiguator
 from cnb_def_graph.utils.read_dicts import read_dicts
 
-import cProfile
 from time import time
 import os
 import json
@@ -11,7 +10,7 @@ from config import DISAMBIGUATION_BATCHES, DRY_RUN_SENSES
 from argparse import ArgumentParser
 
 SAVE_INTERVAL = 2
-CHUNK_SIZE = 800
+CHUNK_SIZE = 450
 
 def parse_args():
     parser = ArgumentParser()

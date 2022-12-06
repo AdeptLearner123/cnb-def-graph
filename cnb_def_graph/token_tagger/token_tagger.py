@@ -59,4 +59,6 @@ class TokenTagger():
 
         tokens = [ token.text for token in doc ]
         tags = [ self._get_token_tag(token) for token in doc ]
-        return list(zip(tokens, tags))
+
+        token_indices = [ (token.idx, token.idx + len(token)) for token in doc ]
+        return list(zip(tokens, tags)), token_indices

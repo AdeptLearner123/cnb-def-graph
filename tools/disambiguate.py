@@ -20,7 +20,7 @@ def main():
     disambiguator = Disambiguator()
 
     definition = dictionary[sense_id]["definition"]
-    token_tags = token_tagger.tokenize_tag(definition)
+    token_tags, _ = token_tagger.tokenize_tag(definition)
 
     print("Token tags", token_tags)
 

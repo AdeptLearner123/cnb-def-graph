@@ -17,7 +17,7 @@ def test_tokenizer():
             sentence_idx = int(labels["sentence"])
 
             expected_token_tags = [ (item["token"], item["tag"]) for item in labels["tokens"] ]
-            token_tags = token_tagger.tokenize_tag(dictionary[sense_id]["sentences"][sentence_idx])
+            token_tags, _ = token_tagger.tokenize_tag(dictionary[sense_id]["sentences"][sentence_idx])
 
             expected_tokens = [ token for token, _ in expected_token_tags ]
             tokens = [ token for token, _ in token_tags ]

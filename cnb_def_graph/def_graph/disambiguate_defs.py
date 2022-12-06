@@ -11,7 +11,7 @@ from config import DISAMBIGUATION_BATCHES, DRY_RUN_SENSES
 from argparse import ArgumentParser
 
 SAVE_INTERVAL = 2
-CHUNK_SIZE = 100
+CHUNK_SIZE = 600
 
 def parse_args():
     parser = ArgumentParser()

@@ -146,15 +146,17 @@ def create_dry_run():
 
 
 def main():
-    use_amp, dry_run, profile = parse_args()
+    use_amp, is_dry_run, is_profile = parse_args()
 
-    if profile:
+    print("Dry run", dry_run)
+
+    if is_profile:
         if dry_run:
             cProfile.run("dry_run(use_amp)")
         else:
             cProfile.run("disambiguate_all(use_amp)")
 
-    if dry_run:
+    if is_dry_run:
         dry_run()
     else:
         disambiguate_all()

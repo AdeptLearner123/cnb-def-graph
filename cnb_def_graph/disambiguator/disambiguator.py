@@ -1,4 +1,5 @@
 import torch
+import bisect 
 
 from config import CONSEC_MODEL_STATE
 from cnb_def_graph.utils.read_dicts import read_dicts
@@ -9,8 +10,8 @@ from cnb_def_graph.consec.tokenizer import ConsecTokenizer
 from tqdm import tqdm
 
 class Disambiguator:
-    BATCH_SIZE = 8
-
+    BATCH_SIZE = 4
+    
     def __init__(self, debug_mode=False, use_amp=False):
         self._dictionary = read_dicts()
         self._debug_mode = debug_mode
@@ -59,10 +60,13 @@ class Disambiguator:
     def disambiguate(self, sense_id, token_senses, compound_indices):
         return self._disambiguate_tokens(sense_id, token_senses, compound_indices)
 
+    
     def _divide_batches(self, active_instances, input_senses_list):
-        instance_batches = [ active_instances[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
-        input_senses_batches = [ input_senses_list[i : i + self.BATCH_SIZE] for i in range(0, len(input_senses_list), self.BATCH_SIZE) ]
-        return list(zip(instance_batches, input_senses_batches))
+        instance_input_senses = list(zip(active_instances, input_senses_list))
+        instance_input_senses.sort(key=lambda item: len(item[0]))
+        batches = [ instance_input_senses[i : i + self.BATCH_SIZE] for i in range(0, len(active_instances), self.BATCH_SIZE) ]
+        return batches
+
 
     def batch_disambiguate(self, token_proposals_list):
         disambiguation_instances = [
@@ -78,9 +82,9 @@ class Disambiguator:
             for batch_instances, batch_inputs_senses in tqdm(self._divide_batches(active_instances, inputs_senses_list)):
                 inputs_list = [ inputs for inputs, _ in batch_inputs_senses ]
 
-                for inputs, instance in zip(inputs_list, batch_instances):
-                    if len(inputs[0]) == 712:
-                        print("Found", instance._tokens, instance._get_context_definitions(), instance._get_candidate_definitions())
+                #for inputs, instance in zip(inputs_list, batch_instances):
+                #    if len(inputs[0]) == 712:
+                #        print("Found", instance._tokens, instance._get_context_definitions(), instance._get_candidate_definitions())
 
                 if torch.cuda.is_available():
                     inputs_list = [ self._send_inputs_to_cuda(inputs) for inputs in inputs_list ]
